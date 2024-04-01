@@ -5,7 +5,6 @@
       <excludeFolder url="file://$MODULE_DIR$/inventory-app/public" />
       <excludeFolder url="file://$MODULE_DIR$/inventory-app/storage" />
       <excludeFolder url="file://$MODULE_DIR$/inventory-app/tests" />
-      <excludeFolder url="file://$MODULE_DIR$/inventory-app/vendor" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
