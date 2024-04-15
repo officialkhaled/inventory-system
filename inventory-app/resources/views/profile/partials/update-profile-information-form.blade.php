@@ -1,4 +1,4 @@
-<section>
+<section class="p-b-2">
     <header>
         <h2 class="text-lg font-medium text-gray-900">
             {{ __('Profile Information') }}
@@ -13,7 +13,7 @@
         @csrf
     </form>
 
-    <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6">
+    <form method="post" action="{{ route('admin.profile.update', 'id') }}" class="mt-6 space-y-6">
         @csrf
         @method('patch')
 

@@ -5,21 +5,23 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class ItemController extends Controller
+class UserController extends Controller
 {
     public function index()
     {
+        $data['header_title'] = 'Dashboard';
         $user = User::find(auth()->user()->id);
 
-        return view('admin.item.item-list',
+        return view('admin.dashboard',
         [
-            'items' => $user->items
+            'header_title' => $data['header_title'],
+            'user' => $user
         ]);
     }
 
     public function create()
     {
-        return view('admin.item.create');
+
     }
 
     public function store()

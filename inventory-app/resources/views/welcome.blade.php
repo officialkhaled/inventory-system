@@ -10,7 +10,7 @@
 
     <link rel="icon" type="image/x-icon" href="{{ asset('customerPanel/assets/favicon.ico') }}"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
-          rel="stylesheet"/>
+        rel="stylesheet"/>
     <link href="{{ asset('customerPanel/css/styles.css') }}" rel="stylesheet"/>
 </head>
 <body>
@@ -30,7 +30,7 @@
                 <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
-                       data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                    data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="#!">All Products</a></li>
                         <li>

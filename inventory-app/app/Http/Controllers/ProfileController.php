@@ -13,7 +13,10 @@ class ProfileController extends Controller
 {
     public function edit(Request $request): View
     {
+        $data['header_title'] = 'Profile';
+
         return view('profile.edit', [
+            'header_title' => $data['header_title'],
             'user' => $request->user(),
         ]);
     }
