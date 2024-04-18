@@ -4,7 +4,7 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-flex justify-content-between align-items-center">
             <h6 class="m-0 font-weight-bold text-primary">Item</h6>
-            <a href="{{ route('admin.item.create') }}" class="btn btn-sm btn-primary shadow-sm d-flex justify-content-center align-items-center">
+            <a href="{{ route('admin.inventory.item.create', ['inventory' => $inventory->id]) }}" class="btn btn-sm btn-primary shadow-sm d-flex justify-content-center align-items-center">
                 Add &nbsp;<i class="fas fa-circle-plus fa-sm text-white-50"></i>
             </a>
         </div>
@@ -22,7 +22,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse ($items as $item)
+                        @forelse ($inventory->items as $item)
                             <tr>
                                 <td class="text-center">{{ $loop->iteration }}</td>
                                 <td>{{ $item->name }}</td>
@@ -32,12 +32,18 @@
                                 </td>
                                 <td>{{ $item->quantity }}</td>
                                 <td class="text-center d-flex justify-content-center align-items-center" style="gap: 6px;">
-                                    <a href="{{ route('admin.item.edit', 'id') }}" class="btn btn-sm btn-success shadow-sm">
+                                    <a href="{{ route('admin.inventory.item.edit', ['inventory' => $inventory->id, 'item' => $item->id]) }}"
+                                        class="btn btn-sm btn-success shadow-sm">
                                         <i class="fas fa-edit text-white-50" style="width: 24px; height: 24px;"></i>
                                     </a>
-                                    <a href="{{ route('admin.item.delete', 'id') }}" class="btn btn-sm btn-danger shadow-sm">
-                                        <i class="fas fa-trash text-white-50" style="width: 24px; height: 24px;"></i>
-                                    </a>
+                                    <form action="{{ route('admin.inventory.item.delete', ['item' => $item->id]) }}" method="POST">
+                                        @csrf
+                                        @method('DELETE')
+
+                                        <button type="submit" class="btn btn-sm btn-danger shadow-sm">
+                                            <i class="fas fa-trash text-white-50" style="width: 24px; height: 24px;"></i>
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                         @empty

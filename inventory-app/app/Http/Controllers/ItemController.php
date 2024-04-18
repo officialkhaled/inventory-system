@@ -2,34 +2,66 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Item;
 use App\Models\User;
+use App\Models\Inventory;
 use Illuminate\Http\Request;
 
 class ItemController extends Controller
 {
-    public function index()
+    public function index(Inventory $inventory)
     {
+        $data['header_title'] = 'Item List';
+
+        $inventory->load('items');
         $user = User::find(auth()->user()->id);
 
         return view('admin.item.item-list',
         [
-            'items' => $user->items
+            'header_title' => $data['header_title'],
+            'user' => $user,
+            'inventory' => $inventory
         ]);
     }
 
-    public function create()
+    public function create(Inventory $inventory, Request $request)
     {
-        return view('admin.item.create');
+        $data['header_title'] = 'Add | Item List';
+
+        $user = User::find(auth()->user()->id);
+
+        return view('admin.item.create',
+        [
+            'header_title' => $data['header_title'],
+            'user' => $user,
+            'inventory' => $inventory
+        ]);
     }
 
-    public function store()
+    public function store(Item $item, Request $request)
     {
+        $validatedData = $request->validate([
+            'name' => 'required',
+            'quantity' => 'required',
+        ]);
 
+        try {
+            $item->fill($validatedData)->save();
+            return redirect()->route('admin.inventory.item.index')->with('success', 'Item added successfully.');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Something went wrong.', 500);
+        }
+
+        return redirect()->route('admin.inventory.item.index');
     }
 
-    public function edit()
+    public function edit(Inventory $inventory, Item $item)
     {
-
+        return view('admin.item.edit',
+        [
+            'inventory' => $inventory,
+            'item' => $item
+        ]);
     }
 
     public function update()

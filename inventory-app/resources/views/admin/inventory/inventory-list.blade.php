@@ -26,7 +26,7 @@
                                 <td>{{ $inventory->name }}</td>
                                 <td>{{ $inventory->description }}</td>
                                 <td class="text-center d-flex justify-content-center align-items-center" style="gap: 6px; vertical-align: middle;">
-                                    <a href="{{ route('admin.item.index') }}" class="btn btn-sm btn-primary shadow-sm">
+                                    <a href="{{ route('admin.inventory.item.index', ['inventory' => $inventory->id]) }}" class="btn btn-sm btn-primary shadow-sm">
                                         <i class="fas fa-box-open text-white-50" style="width: 24px; height: 24px;"></i>
                                     </a>
                                     <a href="{{ route('admin.inventory.edit', ['inventory' => $inventory->id]) }}" class="btn btn-sm btn-success shadow-sm">

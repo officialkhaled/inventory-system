@@ -39,12 +39,12 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-flex justify-content-between align-items-center">
             <h6 class="m-0 font-weight-bold text-primary">Add Item</h6>
-            <a href="{{ route('admin.item.index') }}" class="btn btn-sm btn-primary shadow-sm d-flex justify-content-center align-items-center">
+            <a href="{{ route('admin.inventory.item.index', ['inventory' => $inventory->id]) }}" class="btn btn-sm btn-primary shadow-sm d-flex justify-content-center align-items-center">
                 Back &nbsp;<i class="fas fa-circle-left fa-sm text-white-50"></i>
             </a>
         </div>
         <div class="card-body">
-            <form action="" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('admin.inventory.item.store', ['inventory' => $inventory->id]) }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="row mb-3">
@@ -58,14 +58,14 @@
                     <div class="col-md-4">
                         <div>
                             <label for="description" class="form-label" style="color: #000;">Description</label>
-                            <input type="text" class="form-control" placeholder="Description" name="description" value="">
+                            <input type="text" class="form-control" placeholder="Description" name="description" >
                         </div>
                     </div>
 
                     <div class="col-md-4">
                         <div>
                             <label class="form-label" for="quantity" style="color: #000;">Quantity</label>
-                            <input type="number" class="form-control" placeholder="Quantity" name="quantity" value="">
+                            <input type="number" class="form-control" placeholder="Quantity" name="quantity">
                         </div>
                     </div>
                 </div>
@@ -74,7 +74,7 @@
                     <div class="col-md-8">
                         <div>
                             <label for="img_path" class="form-label" style="color: #000;">Image</label>
-                            <input class="form-control upload-style" type="file" name="img_file" id="formFile">
+                            <input class="form-control upload-style" type="file" name="img_path" id="formFile">
                         </div>
                     </div>
                 </div>

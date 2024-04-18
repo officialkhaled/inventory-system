@@ -10,6 +10,7 @@ class SellerController extends Controller
     public function index()
     {
         $data['header_title'] = 'Seller List';
+
         $user = User::find(auth()->user()->id);
         $sellers = $user->where('usertype', 0)->get();
 

@@ -34,6 +34,7 @@
                                     <form action="{{ route('admin.seller.delete', ['id' => $seller->id]) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
+
                                         <button type="submit" class="btn btn-sm btn-danger shadow-sm">
                                             <i class="fas fa-trash text-white-50" style="width: 24px; height: 24px;"></i>
                                         </button>

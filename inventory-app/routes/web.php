@@ -15,6 +15,10 @@ Route::get('/', function () {
 Route::middleware('auth')->group(function () {
     Route::get('/admin/dashboard', [UserController::class, 'index'])->name('admin.dashboard');
 
+    Route::get('/dashboard', function() {
+        return redirect()->route('admin.dashboard');
+    });
+
     Route::group(['prefix' => 'admin/inventory', 'as' => 'admin.inventory.'], function () {
         Route::get('/', [InventoryController::class, 'index'])->name('index');
         Route::get('/create', [InventoryController::class, 'create'])->name('create');
@@ -22,15 +26,16 @@ Route::middleware('auth')->group(function () {
         Route::get('/{inventory}/edit', [InventoryController::class, 'edit'])->name('edit');
         Route::patch('/{inventory}', [InventoryController::class, 'update'])->name('update');
         Route::delete('/{inventory}', [InventoryController::class, 'delete'])->name('delete');
-    });
 
-    Route::group(['prefix' => 'admin/item', 'as' => 'admin.item.'], function () {
-        Route::get('/', [ItemController::class, 'index'])->name('index');
-        Route::get('/create', [ItemController::class, 'create'])->name('create');
-        Route::post('/', [ItemController::class, 'store'])->name('store');
-        Route::get('/{id}/edit', [ItemController::class, 'edit'])->name('edit');
-        Route::patch('/{id}', [ItemController::class, 'update'])->name('update');
-        Route::delete('/{id}', [ItemController::class, 'delete'])->name('delete');
+        Route::group(['prefix' => '/{inventory}/item', 'as' => 'item.'], function () {
+            Route::get('/', [ItemController::class, 'index'])->name('index');
+            Route::get('/create', [ItemController::class, 'create'])->name('create');
+            Route::post('/', [ItemController::class, 'store'])->name('store');
+            Route::get('/{item}/edit', [ItemController::class, 'edit'])->name('edit');
+            Route::patch('/{item}', [ItemController::class, 'update'])->name('update');
+            Route::delete('/{item}', [ItemController::class, 'delete'])->name('delete');
+        });
+
     });
 
     Route::group(['prefix' => 'admin/seller', 'as' => 'admin.seller.'], function () {
@@ -44,8 +49,8 @@ Route::middleware('auth')->group(function () {
 
     Route::group(['prefix' => 'admin/profile', 'as' => 'admin.profile.'], function () {
         Route::get('/edit', [ProfileController::class, 'edit'])->name('edit');
-    Route::patch('/{id}', [ProfileController::class, 'update'])->name('update');
-    Route::delete('/{id}', [ProfileController::class, 'destroy'])->name('destroy');
+        Route::patch('/{id}', [ProfileController::class, 'update'])->name('update');
+        Route::delete('/{id}', [ProfileController::class, 'destroy'])->name('destroy');
     });
 
 });

@@ -14,8 +14,8 @@ class Inventory extends Model
         'description',
     ];
 
-    public function item()
+    public function items()
     {
-        return $this->hasMany(Item::class, 'item_id');
+        return $this->hasMany(Item::class, 'inventory_id');
     }
 }

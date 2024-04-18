@@ -11,6 +11,7 @@ class InventoryController extends Controller
     public function index()
     {
         $data['header_title'] = 'Inventory List';
+
         $inventories = Inventory::all();
         $user = User::find(auth()->user()->id);
 
