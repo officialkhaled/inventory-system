@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="16d8ddd6-761a-4924-ac53-c1918e3688dc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-app/app/Http/Controllers/InventoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-app/app/Http/Controllers/InventoryController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inventory-app/app/Http/Controllers/ItemController.php" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-app/app/Http/Controllers/ItemController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-app/resources/views/admin/item/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-app/resources/views/admin/item/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-app/resources/views/admin/item/item-list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-app/resources/views/admin/item/item-list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-app/resources/views/components/adminPanel/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-app/resources/views/components/adminPanel/navbar.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -270,7 +267,7 @@
       <workItem from="1713536822613" duration="426000" />
       <workItem from="1713587213956" duration="1724000" />
       <workItem from="1713591876197" duration="279000" />
-      <workItem from="1713615976331" duration="5233000" />
+      <workItem from="1713615976331" duration="5639000" />
     </task>
     <servers />
   </component>

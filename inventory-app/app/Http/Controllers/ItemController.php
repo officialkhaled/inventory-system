@@ -97,7 +97,6 @@ class ItemController extends Controller
             $destinationPath = public_path('assets/images/uploads');
             $file->move($destinationPath, $fileName);
             $validatedData['img_path'] = 'assets/images/uploads/' . $fileName;
-//            File::delete(public_path($item->img_path));
         }
         
         try {

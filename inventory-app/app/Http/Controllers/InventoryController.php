@@ -79,11 +79,16 @@ class InventoryController extends Controller
         return redirect()->route('admin.inventory.index');
     }
 
-    public function delete($inventory)
+    public function delete(Inventory $inventory)
     {
-        $inventory = Inventory::where('id', $inventory)->get()->first();
-        $inventory->delete();
-
-        return redirect()->route('admin.inventory.index');
+        try {
+            $inventory->delete();
+            
+            return redirect()->route('admin.inventory.index')
+                ->with('success', 'Inventory deleted successfully.');
+        } catch (\Exception $e) {
+            return redirect()->route('admin.inventory.index')
+                ->with('error', 'Failed to delete the inventory: ' . $e->getMessage());
+        }
     }
 }
