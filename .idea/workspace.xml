@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="16d8ddd6-761a-4924-ac53-c1918e3688dc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-app/app/Http/Controllers/InventoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-app/app/Http/Controllers/InventoryController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inventory-app/app/Http/Controllers/ItemController.php" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-app/app/Http/Controllers/ItemController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-app/app/Models/Item.php" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-app/app/Models/Item.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-app/database/migrations/2024_04_01_163039_create_items_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-app/database/migrations/2024_04_01_163039_create_items_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-app/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-app/public/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-app/resources/views/admin/item/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-app/resources/views/admin/item/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inventory-app/resources/views/admin/item/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-app/resources/views/admin/item/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-app/resources/views/admin/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-app/resources/views/admin/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-app/resources/views/admin/item/item-list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-app/resources/views/admin/item/item-list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventory-app/resources/views/components/adminPanel/navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-app/resources/views/components/adminPanel/navbar.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,23 +169,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.laravel-idea.search-composer-json": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/xampp/htdocs/laravel/inventory-system/inventory-app",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "settings.sync",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.laravel-idea.search-composer-json&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/xampp/htdocs/laravel/inventory-system/inventory-app&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\xampp\htdocs\laravel\inventory-system\inventory-app" />
@@ -273,7 +268,9 @@
       <workItem from="1713535859492" duration="37000" />
       <workItem from="1713535902997" duration="412000" />
       <workItem from="1713536822613" duration="426000" />
-      <workItem from="1713587213956" duration="1667000" />
+      <workItem from="1713587213956" duration="1724000" />
+      <workItem from="1713591876197" duration="279000" />
+      <workItem from="1713615976331" duration="5233000" />
     </task>
     <servers />
   </component>
