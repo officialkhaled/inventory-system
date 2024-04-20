@@ -11,10 +11,10 @@ return new class extends Migration {
             $table->id();
 
             $table->string('name');
-            $table->unsignedInteger('item_id');
+            $table->unsignedInteger('inventory_id');
             $table->text('description')->nullable();
-            $table->string('img_path');
             $table->bigInteger('quantity');
+            $table->string('img_path');
 
             $table->timestamps();
         });

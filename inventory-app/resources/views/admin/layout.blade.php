@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>{{ !empty($header_title) ? $header_title : '' }} | INV MNG SYS</title>
+    <link rel="icon" href="{{ asset('favicon.ico') }}">
 
     @include('components.adminPanel.imports')
 

@@ -13,8 +13,8 @@ class Item extends Model
         'name',
         'inventory_id',
         'description',
-        'img_path',
         'quantity',
+        'img_path',
     ];
 
     public function inventory()

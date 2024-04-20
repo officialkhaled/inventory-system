@@ -1,6 +1,8 @@
 @extends('admin.layout')
 @section('content')
-
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    
     <style>
         .upload-style {
             display: flex;
@@ -9,10 +11,7 @@
             text-align: center;
             background-color: #f8f8f8;
             cursor: pointer;
-            padding-bottom: 100px;
-            padding-left: 90px;
-            padding-right: 40px;
-            padding-top: 24px;
+            padding: 24px 40px 100px 90px;
             width: 100%;
         }
 
@@ -33,6 +32,20 @@
         input[type=number]::-webkit-outer-spin-button {
             -webkit-appearance: none;
             margin: 0;
+        }
+        
+        .profile-image-container {
+            display: flex;
+            justify-content: center;
+            min-height: 120px;
+            max-height: 280px;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+        
+        .profile-image {
+            width: 75%;
+            object-fit: contain;
         }
     </style>
 
@@ -74,7 +87,13 @@
                     <div class="col-md-8">
                         <div>
                             <label for="img_path" class="form-label" style="color: #000;">Image</label>
-                            <input class="form-control upload-style" type="file" name="img_path" id="formFile">
+                            <input class="form-control upload-style" name="img_path" type="file" id="image">
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="profile-image-container">
+                            <img id="showImage" class="profile-image avatar-lg" src="{{ asset('assets/images/no_image.jpg') }}" alt="">
                         </div>
                     </div>
                 </div>
@@ -88,5 +107,19 @@
             </form>
         </div>
     </div>
-
+    
+    <script type="text/javascript">
+        
+        $(document).ready(function () {
+            $('#image').change(function (e) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#showImage').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(e.target.files['0']);
+            });
+        });
+    
+    </script>
+    
 @endsection

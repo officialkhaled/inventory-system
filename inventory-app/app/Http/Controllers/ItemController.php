@@ -44,6 +44,14 @@ class ItemController extends Controller
             'name' => 'required',
             'quantity' => 'required',
         ]);
+        
+        if ($request->file('img_path')) {
+            $file = $request->file('img_path');
+            $fileName = date('YmdHi-').$file->getClientOriginalName();
+            
+            $file->move(public_path('images/uploads/', $fileName));
+            $validatedData['img_path'] = $fileName;
+        }
 
         try {
             $item->fill($validatedData)->save();
@@ -52,7 +60,7 @@ class ItemController extends Controller
             return redirect()->back()->with('error', 'Something went wrong.', 500);
         }
 
-        return redirect()->route('admin.inventory.item.index');
+//        return redirect()->route('admin.inventory.item.index');
     }
 
     public function edit(Inventory $inventory, Item $item)

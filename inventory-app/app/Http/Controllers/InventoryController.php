@@ -25,10 +25,12 @@ class InventoryController extends Controller
 
     public function create()
     {
+        $data['header_title'] = 'Add | Inventory List';
         $user = User::find(auth()->user()->id);
 
         return view('admin.inventory.create',
         [
+            'header_title' => $data['header_title'],
             'user' => $user
         ]);
     }
