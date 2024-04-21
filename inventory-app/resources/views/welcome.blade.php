@@ -6,19 +6,20 @@
     <meta name="description" content=""/>
     <meta name="author" content=""/>
 
-    <title>Home</title>
+    <title>INV MNG SYS</title>
 
-    <link rel="icon" type="image/x-icon" href="{{ asset('customerPanel/assets/favicon.ico') }}"/>
+    <link rel="icon" href="{{ asset('favicon.ico') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
         rel="stylesheet"/>
     <link href="{{ asset('customerPanel/css/styles.css') }}" rel="stylesheet"/>
+
 </head>
 <body>
 
 <!-- Navigation-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container px-4 px-lg-5">
-        <a class="navbar-brand" href="#!">Start Bootstrap</a>
+        <a class="navbar-brand" href="#!">INV MNG<sup>SYS</sup></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                 aria-expanded="false" aria-label="Toggle navigation"><span
@@ -41,12 +42,15 @@
                     </ul>
                 </li>
             </ul>
-            <form class="d-flex">
+            <form class="d-flex" style="gap: 8px">
                 <button class="btn btn-outline-dark" type="submit">
                     <i class="bi-cart-fill me-1"></i>
                     Cart
                     <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
                 </button>
+
+                <a href="{{ route('login') }}" class="btn btn-primary">LOGIN</a>
+                <a href="{{ route('register') }}" class="btn btn-secondary">REGISTER</a>
             </form>
         </div>
     </div>
@@ -56,6 +60,10 @@
     <div class="container px-4 px-lg-5 my-5">
         <div class="text-center text-white">
             <h1 class="display-4 fw-bolder">Shop in style</h1>
+
+            {{-- <a href="{{ route('login') }}" class="btn btn-primary mb-2">LOGIN</a>
+            <a href="{{ route('register') }}" class="btn btn-primary mb-2">REGISTER</a> --}}
+
             <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
         </div>
     </div>

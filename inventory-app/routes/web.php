@@ -42,9 +42,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/', [SellerController::class, 'index'])->name('index');
         Route::get('/create', [SellerController::class, 'create'])->name('create');
         Route::post('/', [SellerController::class, 'store'])->name('store');
-        Route::get('/{id}/edit', [SellerController::class, 'edit'])->name('edit');
-        Route::patch('/{id}', [SellerController::class, 'update'])->name('update');
-        Route::delete('/{id}', [SellerController::class, 'delete'])->name('delete');
+        Route::delete('/{user}', [SellerController::class, 'delete'])->name('delete');
     });
 
     Route::group(['prefix' => 'admin/profile', 'as' => 'admin.profile.'], function () {
@@ -55,6 +53,37 @@ Route::middleware('auth')->group(function () {
 
 });
 
+Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', [UserController::class, 'index'])->name('dashboard');
+
+    /* Route::get('/admin/dashboard', function() {
+        return redirect()->route('dashboard');
+    }); */
+
+    Route::group(['prefix' => 'inventory', 'as' => 'inventory.'], function () {
+        Route::get('/', [InventoryController::class, 'index'])->name('index');
+        Route::get('/create', [InventoryController::class, 'create'])->name('create');
+        Route::post('/', [InventoryController::class, 'store'])->name('store');
+        Route::get('/{inventory}/edit', [InventoryController::class, 'edit'])->name('edit');
+        Route::patch('/{inventory}', [InventoryController::class, 'update'])->name('update');
+        Route::delete('/{inventory}', [InventoryController::class, 'delete'])->name('delete');
+
+        Route::group(['prefix' => '/{inventory}/item', 'as' => 'item.'], function () {
+            Route::get('/', [ItemController::class, 'index'])->name('index');
+            Route::get('/create', [ItemController::class, 'create'])->name('create');
+            Route::post('/', [ItemController::class, 'store'])->name('store');
+            Route::get('/{item}/edit', [ItemController::class, 'edit'])->name('edit');
+            Route::patch('/{item}', [ItemController::class, 'update'])->name('update');
+            Route::delete('/{item}', [ItemController::class, 'delete'])->name('delete');
+        });
+    });
+
+    Route::group(['prefix' => 'profile', 'as' => 'profile.'], function () {
+        Route::get('/edit', [ProfileController::class, 'edit'])->name('edit');
+        Route::patch('/{id}', [ProfileController::class, 'update'])->name('update');
+        Route::delete('/{id}', [ProfileController::class, 'destroy'])->name('destroy');
+    });
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

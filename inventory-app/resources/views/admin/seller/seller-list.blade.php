@@ -28,10 +28,7 @@
                                 <td>{{ $seller->email }}</td>
                                 <td>{{ $seller->store }}</td>
                                 <td class="text-center d-flex justify-content-center align-items-center" style="gap: 6px; vertical-align: middle;">
-                                    <a href="{{ route('admin.seller.edit', ['id' => $user->id]) }}" class="btn btn-sm btn-success shadow-sm">
-                                        <i class="fas fa-edit text-white-50" style="width: 24px; height: 24px;"></i>
-                                    </a>
-                                    <form action="{{ route('admin.seller.delete', ['id' => $seller->id]) }}" method="POST">
+                                    <form action="{{ route('admin.seller.delete', ['user' => $seller->id]) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
 

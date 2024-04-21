@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Item;
+use App\Models\Inventory;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -12,35 +14,26 @@ class UserController extends Controller
         $data['header_title'] = 'Dashboard';
         $user = User::find(auth()->user()->id);
 
-        return view('admin.dashboard',
-        [
-            'header_title' => $data['header_title'],
-            'user' => $user
-        ]);
-    }
+        $inventory = Inventory::count();
+        $item = Item::count();
 
-    public function create()
-    {
-
-    }
-
-    public function store()
-    {
-
-    }
-
-    public function edit()
-    {
-
-    }
-
-    public function update()
-    {
-
-    }
-
-    public function delete()
-    {
+        if ($user->usertype == 1) {
+            return view('admin.dashboard',
+            [
+                'header_title' => $data['header_title'],
+                'user' => $user,
+                'inventory' => $inventory,
+                'item' => $item
+            ]);
+        } else {
+            return view('customer.dashboard',
+            [
+                'header_title' => $data['header_title'],
+                'user' => $user,
+                'inventory' => $inventory,
+                'item' => $item
+            ]);
+        }
 
     }
 }

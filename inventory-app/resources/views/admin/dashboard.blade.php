@@ -12,7 +12,7 @@
                                 Earnings (Monthly)
                             </div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                $40,000
+                                $10,000
                             </div>
                         </div>
                         <div class="col-auto">
@@ -33,7 +33,7 @@
                                 Earnings (Annual)
                             </div>
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                $215,000
+                                $110,000
                             </div>
                         </div>
                         <div class="col-auto">
@@ -49,21 +49,19 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div
-                                class="text-xs font-weight-bold text-info text-uppercase mb-1">
-                                Tasks
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                Inventory
                             </div>
                             <div class="row no-gutters align-items-center">
                                 <div class="col-auto">
-                                    <div
-                                        class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
-                                        50%
+                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">
+                                        {{ $inventory }}
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+                            <i class="fas fa-warehouse fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>
@@ -75,14 +73,13 @@
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
-                            <div
-                                class="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                                Pending Requests
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                Items
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $item }}</div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-comments fa-2x text-gray-300"></i>
+                            <i class="fas fa-boxes-stacked fa-2x text-gray-300"></i>
                         </div>
                     </div>
                 </div>

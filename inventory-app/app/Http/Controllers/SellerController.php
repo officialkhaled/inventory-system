@@ -24,10 +24,12 @@ class SellerController extends Controller
 
     public function create()
     {
+        $data['header_title'] = 'Add | Seller List';
         $user = User::find(auth()->user()->id);
 
         return view('admin.seller.create',
         [
+            'header_title' => $data['header_title'],
             'user' => $user
         ]);
     }
@@ -47,20 +49,16 @@ class SellerController extends Controller
         return redirect()->route('admin.seller.index');
     }
 
-    public function edit()
+    public function delete(User $user)
     {
+        try {
+            $user->delete();
 
-    }
-
-    public function update()
-    {
-
-    }
-
-    public function delete($id)
-    {
-        $id = User::find($id)->first()->delete();
-
-        return redirect()->route('admin.seller.index');
+            return redirect()->route('admin.seller.index')
+                ->with('success', 'Seller deleted successfully.');
+        } catch (\Exception $e) {
+            return redirect()->route('admin.seller.index')
+                ->with('error', 'Failed to delete the seller: ' . $e->getMessage());
+        }
     }
 }

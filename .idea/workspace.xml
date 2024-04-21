@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="16d8ddd6-761a-4924-ac53-c1918e3688dc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/inventory-app/app/Http/Controllers/InventoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-app/app/Http/Controllers/InventoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventory-app/app/Http/Controllers/ItemController.php" beforeDir="false" afterPath="$PROJECT_DIR$/inventory-app/app/Http/Controllers/ItemController.php" afterDir="false" />
-    </list>
+    <list default="true" id="16d8ddd6-761a-4924-ac53-c1918e3688dc" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -267,7 +264,7 @@
       <workItem from="1713536822613" duration="426000" />
       <workItem from="1713587213956" duration="1724000" />
       <workItem from="1713591876197" duration="279000" />
-      <workItem from="1713615976331" duration="5639000" />
+      <workItem from="1713615976331" duration="5749000" />
     </task>
     <servers />
   </component>

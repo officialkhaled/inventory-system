@@ -54,11 +54,14 @@ class InventoryController extends Controller
 
     public function edit($inventory)
     {
+        $data['header_title'] = 'Edit | Inventory List';
+
         $user = User::find(auth()->user()->id);
         $inventory = Inventory::where('id', $inventory)->get()->first();
 
         return view('admin.inventory.edit',
         [
+            'header_title' => $data['header_title'],
             'user' => $user,
             'inventory' => $inventory
         ]);
@@ -83,7 +86,7 @@ class InventoryController extends Controller
     {
         try {
             $inventory->delete();
-            
+
             return redirect()->route('admin.inventory.index')
                 ->with('success', 'Inventory deleted successfully.');
         } catch (\Exception $e) {
